@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Gym Coach">
-<meta name="theme-color" content="#0f0f0f">
+<meta name="theme-color" content="#080d17">
 <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIkd5bSBDb2FjaCIsICJzaG9ydF9uYW1lIjogIkd5bSIsICJkZXNjcmlwdGlvbiI6ICJJbCB0dW8gY29hY2ggZGkgcGFsZXN0cmEgcGVyc29uYWxlIiwgInN0YXJ0X3VybCI6ICIvIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwZjBmMGYiLCAidGhlbWVfY29sb3IiOiAiIzBmMGYwZiIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBMU1USWdOVEV5SWo0S0lDQThjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnY25nOUlqRXdNQ0lnWm1sc2JEMGlJekZoTVdFeFlTSXZQZ29nSUR4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTXpRd0lpQm1iMjUwTFhOcGVtVTlJak13TUNJZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSWdabWxzYkQwaUkwUkJOemMxTmlJZ1ptOXVkQzFtWVcxcGJIazlJa0Z5YVdGc0lqN2ltcUU4TDNSbGVIUStDand2YzNablBnPT0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifV19">
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzFhMWExYSIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzQwIiBmb250LXNpemU9IjMwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0RBNzc1NiIgZm9udC1mYW1pbHk9IkFyaWFsIj7imqE8L3RleHQ+Cjwvc3ZnPg==">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -525,6 +525,44 @@ html, body { background: var(--bg); color: var(--text); font-family: 'Barlow', s
   padding:8px; text-align:center; }
 .queue-stat-val { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; color:var(--accent); }
 .queue-stat-lbl { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.5px; }
+/* ── 2026 visual refresh ── */
+:root { --bg:#080d17; --surface:#101a29; --surface2:#182538; --accent:#ceff55; --accent2:#aebcff; --text:#f5f8ff; --text2:#d7e0ee; --text3:#8e9bb0; --border:rgba(179,198,231,.12); --border2:rgba(179,198,231,.19); --radius:18px; }
+html, body { background:radial-gradient(900px 530px at 100% -12%,rgba(87,117,255,.2),transparent 62%),radial-gradient(740px 450px at -12% 106%,rgba(206,255,85,.12),transparent 67%),var(--bg); }
+.top-bar { padding:1rem 1.25rem; background:rgba(16,18,22,.84); border-bottom-color:rgba(255,255,255,.08); box-shadow:0 8px 28px rgba(0,0,0,.12); }
+.top-bar h2 { letter-spacing:.01em; }
+.nav-bar { left:50%; right:auto; bottom:max(12px,env(safe-area-inset-bottom, 12px)); width:min(560px,calc(100% - 24px)); transform:translateX(-50%); padding:5px; border:1px solid rgba(255,255,255,.1); border-radius:18px; background:rgba(24,28,35,.9); box-shadow:0 14px 40px rgba(0,0,0,.32); }
+.nav-btn { position:relative; padding:9px 0 7px; border-radius:13px; color:#9da6b5; }
+.nav-btn.active { color:#1d2a11; background:var(--accent); }
+.nav-btn.active .ni { filter:drop-shadow(0 2px 7px rgba(206,255,85,.34)); }
+.card, .machine-item, .history-card, .queue-ex-item, .health-card { box-shadow:0 10px 26px rgba(0,0,0,.12); }
+.home-hero { position:relative; overflow:hidden; padding:1.35rem 1.25rem 1rem; background:linear-gradient(128deg,#142747 0%,#111d31 52%,#0e1625 100%); }
+.home-hero::after { content:''; position:absolute; width:280px; height:280px; border:42px solid rgba(206,255,85,.1); border-radius:50%; right:-116px; top:-174px; pointer-events:none; }
+.home-badge { position:relative; z-index:1; background:rgba(206,255,85,.12); border-color:rgba(206,255,85,.34); }
+.home-title { position:relative; z-index:1; font-size:42px; letter-spacing:-2.4px; }
+.home-stats { position:relative; z-index:1; gap:8px; margin-top:14px; }
+.stat-cell { padding:10px 12px; background:rgba(255,255,255,.055); border-color:rgba(255,255,255,.09); }
+.stat-cell .sv { font-size:24px; }
+.btn-primary, .btn-done { background:linear-gradient(135deg,#e1ff81,#aef038); color:#17200a; box-shadow:0 9px 25px rgba(174,240,56,.24); }
+.btn-primary { min-height:50px; }
+.machine-item, .history-card, .queue-ex-item { border-color:rgba(255,255,255,.09); transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease; }
+.machine-item:hover, .history-card:hover, .queue-ex-item:hover { transform:translateY(-2px); border-color:rgba(206,255,85,.45); box-shadow:0 14px 30px rgba(0,0,0,.2); }
+.machine-icon, .queue-ex-icon { background:linear-gradient(145deg,#203554,#122038); border-color:rgba(174,188,255,.2); }
+.ex-card { border-color:rgba(174,188,255,.24); box-shadow:0 18px 46px rgba(0,0,0,.24); }
+.ex-header { padding:1.35rem 1.25rem; background:linear-gradient(135deg,#c7ff55 0%,#77c94f 100%); }
+.ex-name { font-size:29px; }
+.weight-block { background:linear-gradient(145deg,#1b2d48,#132036); border-color:rgba(174,188,255,.18); }
+.queue-progress-bar { height:7px; background:#292f39; }
+.queue-stats { gap:10px; }
+.queue-stat { padding:12px 6px; background:linear-gradient(145deg,#20252e,#191d24); }
+.profile-avatar { box-shadow:0 0 0 7px rgba(206,255,85,.12),0 12px 28px rgba(0,0,0,.25); }
+.profile-field input, .profile-field select, .profile-field textarea, .text-input, .weight-input { background:#14171d; border-color:rgba(255,255,255,.12); }
+.profile-field input:focus, .profile-field select:focus, .profile-field textarea:focus, .text-input:focus, .weight-input:focus { box-shadow:0 0 0 3px rgba(206,255,85,.18); }
+.home-training-cta { width:100%; display:flex; align-items:center; gap:11px; padding:12px 14px; text-align:left; background:linear-gradient(110deg,#162b49,#1a2844); border:1px solid rgba(174,188,255,.34); border-radius:14px; color:var(--text); cursor:pointer; }
+.home-training-cta > span:first-child { width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:var(--accent); color:#17200a; font-size:20px; font-weight:800; }
+.home-training-cta b,.home-training-cta small { display:block; }.home-training-cta b { font-family:'Barlow Condensed',sans-serif; font-size:17px; letter-spacing:.5px; }.home-training-cta small { color:var(--text3); font-size:11px; margin-top:1px; }.home-training-cta i { margin-left:auto; color:var(--accent); font-style:normal; font-size:20px; }
+.home-training-content { padding:1.25rem; }.home-training-hero { padding:20px; border:1px solid rgba(174,188,255,.2); border-radius:18px; background:linear-gradient(135deg,#142b4a,#131e32); margin-bottom:20px; }.home-training-hero h2 { font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:800; line-height:.9; letter-spacing:-1.6px; margin:10px 0; }.home-training-hero h2 span { color:var(--accent); }.home-training-hero p { color:var(--text2); font-size:13px; line-height:1.6; }
+.home-routine-card,.stretch-card { width:100%; display:flex; align-items:center; gap:12px; padding:14px; margin:0 0 9px; border-radius:16px; text-align:left; cursor:pointer; color:var(--text); background:var(--surface); border:1px solid var(--border); transition:transform .16s,border-color .16s; }.home-routine-card:hover,.stretch-card:hover { transform:translateY(-2px); border-color:var(--accent); }.stretch-card { background:linear-gradient(135deg,#192c33,#14252d); border-color:rgba(123,223,160,.25); }.routine-icon { display:grid; place-items:center; width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:var(--surface2); color:var(--accent); font-size:22px; }.stretch-card .routine-icon { color:var(--green); }.routine-copy { flex:1; min-width:0; }.routine-copy b { display:block; font-size:15px; }.routine-copy small { display:block; margin-top:3px; color:var(--text3); font-size:11px; }.routine-time { color:var(--accent2); font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:700; white-space:nowrap; }.home-training-note { color:var(--text3); text-align:center; font-size:12px; line-height:1.55; margin:14px 10px 24px; }
+@media (max-width:480px) { .home-title { font-size:39px; } .home-hero { padding-top:1.2rem; } .nav-bar { width:calc(100% - 16px); bottom:8px; border-radius:16px; } .nav-btn { font-size:9px; } .nav-btn .ni { font-size:16px; } }
 </style>
 </head>
 <body>
@@ -615,6 +653,7 @@ html, body { background: var(--bg); color: var(--text); font-family: 'Barlow', s
         <span style="font-size:9px;color:var(--accent2);font-weight:600;">My lists</span>
       </button>
     </div>
+    <button class="home-training-cta" onclick="goTo('home-training-screen')"><span>⌂</span><span><b>Home Training</b><small>Weights, bars & bands</small></span><i>→</i></button>
     <button onclick="goTo('manual-screen')" style="width:100%;background:none;border:1px solid var(--border);color:var(--text3);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px;border-radius:99px;cursor:pointer;">📖 User Manual</button>
   </div>
   <div class="nav-bar">
@@ -626,6 +665,24 @@ html, body { background: var(--bg); color: var(--text); font-family: 'Barlow', s
   </div>
 </div>
 
+<!-- HOME TRAINING SCREEN -->
+<div id="home-training-screen" class="screen">
+  <div class="top-bar">
+    <div><div style="font-size:11px;color:var(--accent);letter-spacing:1.4px;text-transform:uppercase;font-weight:700;">Train anywhere</div><h2>⌂ Home Training</h2></div>
+    <button onclick="goTo('home')" style="background:none;border:1px solid var(--border);color:var(--text2);font-size:13px;padding:7px 14px;border-radius:99px;cursor:pointer;font-family:'Barlow',sans-serif;">✕ Close</button>
+  </div>
+  <div class="scrollable home-training-content">
+    <div class="home-training-hero"><div class="home-badge">YOUR EQUIPMENT</div><h2>Strength at<br><span>home.</span></h2><p>Designed for dumbbells, barbells, push-up bars and resistance bands. Each routine opens your normal workout queue and logs your weights.</p></div>
+    <div class="section-label">Choose a routine</div>
+    <button class="home-routine-card" onclick="startHomeRoutine('full')"><span class="routine-icon">⚡</span><span class="routine-copy"><b>Full Body Strength</b><small>Barbell + dumbbells · 6 exercises</small></span><span class="routine-time">45 min</span></button>
+    <button class="home-routine-card" onclick="startHomeRoutine('upper')"><span class="routine-icon">↗</span><span class="routine-copy"><b>Upper Body</b><small>Dumbbells + push-up bars · 5 exercises</small></span><span class="routine-time">35 min</span></button>
+    <button class="home-routine-card" onclick="startHomeRoutine('lower')"><span class="routine-icon">↘</span><span class="routine-copy"><b>Lower Body</b><small>Barbell + dumbbells · 5 exercises</small></span><span class="routine-time">35 min</span></button>
+    <button class="home-routine-card" onclick="startHomeRoutine('bands')"><span class="routine-icon">∞</span><span class="routine-copy"><b>Resistance Bands</b><small>Low-impact full body · 5 exercises</small></span><span class="routine-time">25 min</span></button>
+    <div class="section-label" style="margin-top:20px;">Recovery</div>
+    <button class="stretch-card" onclick="startHomeRoutine('stretch')"><span class="routine-icon">◎</span><span class="routine-copy"><b>Mobility & Spine Stability</b><small>Mobility + core control · 10 movements</small></span><span class="routine-time">18 min</span></button>
+    <p class="home-training-note">Move slowly, keep a neutral spine and stop if you feel pain or symptoms that spread.</p>
+  </div>
+</div>
 
 <!-- PLANNING SCREEN -->
 <div id="planning-screen" class="screen">
@@ -858,6 +915,41 @@ var DEFAULT_MACHINES = [
   { id:50, name:'Pallof Press Cable',                   series:3, reps:'12–15', muscles:['Core','Anti-Rotation'],             weight:0 }
 ];
 
+var HOME_TRAINING_EXERCISES = [
+  { name:'Barbell Romanian Deadlift', series:3, reps:'8–10', muscles:['Hamstrings','Glutes','Back'] },
+  { name:'Barbell Floor Press', series:3, reps:'8–12', muscles:['Chest','Triceps'] },
+  { name:'Barbell Bent-Over Row', series:3, reps:'8–12', muscles:['Back','Biceps'] },
+  { name:'Dumbbell Shoulder Press', series:3, reps:'10–12', muscles:['Shoulders','Triceps'] },
+  { name:'Dumbbell Goblet Squat', series:3, reps:'10–15', muscles:['Quadriceps','Glutes'] },
+  { name:'Dumbbell Split Squat', series:3, reps:'10–12 / side', muscles:['Quadriceps','Glutes'] },
+  { name:'Dumbbell Curl', series:3, reps:'10–15', muscles:['Biceps'] },
+  { name:'Push-Up Bars Push-Up', series:3, reps:'8–15', muscles:['Chest','Triceps','Shoulders'] },
+  { name:'Resistance Band Row', series:3, reps:'12–15', muscles:['Back','Biceps'] },
+  { name:'Resistance Band Pull Apart', series:3, reps:'15–20', muscles:['Rear Deltoid','Upper Back'] },
+  { name:'Resistance Band Squat', series:3, reps:'12–15', muscles:['Quadriceps','Glutes'] },
+  { name:'Resistance Band Pallof Press', series:3, reps:'12 / side', muscles:['Core','Obliques'] },
+  { name:'Neck & Shoulder Stretch', series:2, reps:'30 sec / side', muscles:['Neck','Shoulders'] },
+  { name:'Chest Opener Stretch', series:2, reps:'30 sec', muscles:['Chest','Shoulders'] },
+  { name:'Cat-Cow Mobility', series:2, reps:'8–10', muscles:['Back','Core'] },
+  { name:'Hip Flexor Stretch', series:2, reps:'30 sec / side', muscles:['Hips','Quadriceps'] },
+  { name:'Hamstring Stretch', series:2, reps:'30 sec / side', muscles:['Hamstrings'] },
+  { name:'Figure Four Glute Stretch', series:2, reps:'30 sec / side', muscles:['Glutes','Hips'] },
+  { name:'Child’s Pose', series:2, reps:'45 sec', muscles:['Back','Shoulders'] },
+  { name:'Ankle Mobility', series:2, reps:'10 / side', muscles:['Ankles','Calves'] },
+  { name:'McGill Curl-Up', series:2, reps:'6–8 / side', muscles:['Core','Spine Stability'] },
+  { name:'Bird Dog', series:2, reps:'8 / side', muscles:['Core','Back','Glutes'] },
+  { name:'Side Plank', series:2, reps:'20–30 sec / side', muscles:['Obliques','Core'] },
+  { name:'Glute Bridge', series:2, reps:'12–15', muscles:['Glutes','Core'] }
+];
+
+var HOME_ROUTINES = {
+  full:['Barbell Romanian Deadlift','Barbell Floor Press','Barbell Bent-Over Row','Dumbbell Goblet Squat','Dumbbell Shoulder Press','Dumbbell Curl'],
+  upper:['Push-Up Bars Push-Up','Barbell Bent-Over Row','Dumbbell Shoulder Press','Resistance Band Pull Apart','Dumbbell Curl'],
+  lower:['Dumbbell Goblet Squat','Barbell Romanian Deadlift','Dumbbell Split Squat','Resistance Band Squat','Resistance Band Pallof Press'],
+  bands:['Resistance Band Row','Resistance Band Squat','Resistance Band Pull Apart','Resistance Band Pallof Press','Push-Up Bars Push-Up'],
+  stretch:['Cat-Cow Mobility','Hip Flexor Stretch','Hamstring Stretch','Figure Four Glute Stretch','McGill Curl-Up','Bird Dog','Side Plank','Glute Bridge','Child’s Pose','Ankle Mobility']
+};
+
 var COACH_TIPS = {
   'chest press machine':      'Sit with your back firmly against the pad, grip the handles at chest height with elbows slightly below shoulders. Push explosively and return slowly in 3 seconds — the eccentric phase builds mass. Choose a weight that brings you to technical failure between rep 10 and 12.',
   'diverging seated row':     'Sit with your chest against the support pad, grip the handles and pull toward your hips bringing elbows behind the torso line. Squeeze the shoulder blades at the peak for 1 second before releasing. Use a weight that lets you keep your chest in contact with the pad throughout all sets.',
@@ -905,6 +997,27 @@ async function load() {
 }
 async function saveMachines() { try { localStorage.setItem('gymcoach_machines_v2', JSON.stringify(machines)); } catch(e) {} }
 async function saveHistory()  { try { localStorage.setItem('gymcoach_sessions', JSON.stringify(sessionHistory)); } catch(e) {} }
+
+function ensureHomeTrainingExercises() {
+  var added = false;
+  HOME_TRAINING_EXERCISES.forEach(function(ex) {
+    var exists = machines.some(function(m){ return m.name.toLowerCase() === ex.name.toLowerCase(); });
+    if (!exists) {
+      machines.push({ id:nextId++, name:ex.name, series:ex.series, reps:ex.reps, muscles:ex.muscles, weight:0, homeTraining:true });
+      added = true;
+    }
+  });
+  if (added) saveMachines();
+}
+
+function startHomeRoutine(kind) {
+  var names = HOME_ROUTINES[kind] || [];
+  var exercises = names.map(function(name){ return machines.find(function(m){ return m.name === name; }); }).filter(Boolean);
+  if (!exercises.length) { alert('Home exercises are not available yet. Please reload the app.'); return; }
+  aiWorkoutQueue = exercises.slice();
+  aiWorkoutActive = true;
+  startWorkout();
+}
 
 function goTo(id) {
   document.querySelectorAll('.screen').forEach(function(s){
@@ -4134,6 +4247,7 @@ function toggleUnclassifiedList() {
 // ── INIT ──
 (async function() {
   await load(); await loadProfile(); await loadPlans();
+  ensureHomeTrainingExercises();
   loadHealthEntries();
   updateHomeStats();
   document.getElementById('home-date').textContent = new Date().toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
